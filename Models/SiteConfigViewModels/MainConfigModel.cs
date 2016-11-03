@@ -10,7 +10,7 @@ namespace noexcuses.Models.SiteConfigViewModels
 {
     public class MainConfigModel
     {
-        [key]
+        [Key]
         public int id {get; set;}
 
         public int currentWk {get; set;}
@@ -19,7 +19,7 @@ namespace noexcuses.Models.SiteConfigViewModels
 
     public class MainContentMngrModel
     {
-        [key]
+        [Key]
         public int id {get; set;}
         public string firstPlaceHolder {get; set;}
         public string secondPlaceHolder {get; set;}
