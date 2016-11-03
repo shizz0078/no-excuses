@@ -1,0 +1,44 @@
+@model IEnumerable<noexcuses.Models.WeeklystandingsViewModels.WeeklyStatndingsModel>
+@using Microsoft.AspNetCore.Identity
+@using noexcuses.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+<hr>
+<div class="table-responsive">
+   <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Team Name</th>
+            <th>Last Weeks Standings</th>
+        </tr>
+        </thead>
+         <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.wkRank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.teamName)
+            </td>
+            <td>
+               
+            </td>
+            
+            @if (SignInManager.IsSignedIn(User)){
+                <td>    
+                    @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.id })
+                </td>
+                }       
+            
+        </tr>
+    }
+         </tbody>
+    </table>
+</div>

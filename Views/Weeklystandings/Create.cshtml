@@ -1,0 +1,42 @@
+@model noexcuses.Models.WeeklystandingsViewModels.WeeklyStatndingsModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>@ViewData["Title"].</h2>
+
+<form asp-controller="Weeklystandings" asp-action="Create" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+    <h4>Create a new account.</h4>
+    <hr />
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="wkNumber" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="wkNumber" class="form-control" />
+            <span asp-validation-for="wkNumber" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="wkRank" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="wkRank" class="form-control" />
+            <span asp-validation-for="wkRank" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="teamName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="teamName" class="form-control" />
+            <span asp-validation-for="teamName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-default">Register</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
