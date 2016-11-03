@@ -19,7 +19,7 @@ namespace noexcuses.Models.SiteConfigViewModels
 
     public class MainContentMngrModel
     {
-        [ket]
+        [key]
         public int id {get; set;}
         public string firstPlaceHolder {get; set;}
         public string secondPlaceHolder {get; set;}
